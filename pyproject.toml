@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "rag-with-zepchathistory"
+version = "0.1.0"
+description = ""
+authors = ["tobiee <tochukwunwoke1@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+langchain = "^0.0.350"
+zep-python = "^1.4.2"
+openai = "^1.5.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.27.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
