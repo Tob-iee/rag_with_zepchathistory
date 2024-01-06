@@ -4,10 +4,6 @@ from uuid import uuid4
 from operator import itemgetter
 from typing import Optional, List, Tuple
 
-from fastapi import FastAPI
-from fastapi.responses import RedirectResponse
-from langserve import add_routes
-from dotenv import load_dotenv
 
 from langchain.chat_models import ChatOpenAI
 from langchain.memory.chat_message_histories import ZepChatMessageHistory
@@ -28,8 +24,6 @@ from langchain_core.runnables import (
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables.utils import ConfigurableFieldSingleOption
 
-load_dotenv()
-
 ZEP_API_URL = os.environ.get("ZEP_API_URL", "http://localhost:8080")
 
 # RAG answer synthesis prompt
@@ -48,6 +42,6 @@ chain =  QA_PROMPT | ChatOpenAI() | StrOutputParser()
 chain_with_history = RunnableWithMessageHistory(
     chain,
     lambda session_id: ZepChatMessageHistory(session_id, url=ZEP_API_URL),
-    history_messages_key="chat_history",
+    # history_messages_key="chat_history",
     input_messages_key="question"
 )
