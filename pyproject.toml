@@ -14,6 +14,8 @@ openai = "^1.5.0"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.27.1"
+langchain-cli = {extras = ["serve"], version = "^0.0.20"}
+fastapi = "^0.108.0"
 
 [build-system]
 requires = ["poetry-core"]
