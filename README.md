@@ -1,9 +1,11 @@
 # Introduction
 
-## Dependencies
+## Perquisite
 - Generate an OpenAI API Key
 - Zep
 - Langchain
+
+## Usage
 
 ### Generate an OpenAI API Key.
 Follow the steps [here](https://gptforwork.com/help/gpt-for-docs/setup/create-openai-api-key) to generate an OpenAI API Key
@@ -45,16 +47,14 @@ pip install zep-python
 ```
 
 
-### Install Langchain
-```bash
-pip install langchain
-```
+### Serve langchain rag bot with langserve
 
+<!-- ```bash
+pip install langchain
+``` -->
 <!-- ```bash
 poetry add  "langchain-cli[serve]" -G dev
 ``` -->
-
-## Usage
 
 To use this package, you should first have the LangChain CLI installed:
 ```bash
