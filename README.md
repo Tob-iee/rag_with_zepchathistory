@@ -3,7 +3,7 @@
 ## Perquisite
 - Generate an OpenAI API Key
 - Zep
-- Langchain
+- Langchain (serve)
 
 ## Usage
 
@@ -63,24 +63,10 @@ pip install -U "langchain-cli[serve]"
 
 To create a new LangChain project and install this as the only package, you can do:
 ```bash
-langchain app new zep-app --package rag_with_zepchathistory
+cd zep-app
 ```
 
-And add the following code to your server.py file:
-```bash
-from rag_with_zepchathistory import chain as rag_with_zepchathistory_chain
-
-add_routes(app, rag_with_zepchathistory_chain, path="/rag_with_zepchathistory")
-```
-
-(Optional) Let's now configure LangSmith. LangSmith will help us trace, monitor and debug LangChain applications. LangSmith is currently in private beta, you can sign up here. If you don't have access, you can skip this section
-```bash
-export LANGCHAIN_TRACING_V2=true
-export LANGCHAIN_API_KEY=<your-api-key>
-export LANGCHAIN_PROJECT=<your-project>  # if not specified, defaults to "default"
-```
-
-If you are inside this directory, then you can spin up a LangServe instance directly by:
+Inside this directory, spin up a LangServe instance:
 
 ```bash
 langchain serve
@@ -89,6 +75,6 @@ langchain serve
 <br>
 Then access the Zep Web UI at http://localhost:< local port >/admin
 
-We can see the templates at http://127.0.0.1:8000/docs We can access the playground at http://127.0.0.1:8000/rag_with_zepchathistory/playground
+We can see the templates at http://127.0.0.1:8000/docs We can access the playground at http://127.0.0.1:8000/playground
 
 
